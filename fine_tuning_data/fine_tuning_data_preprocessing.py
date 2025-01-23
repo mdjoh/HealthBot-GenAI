@@ -97,4 +97,7 @@ with open('./chat_data_for_fine_tuning.jsonl', 'w') as file:
                 ]}
 
         # write formatted chat to JSONL file
-        file.write(json.dumps(chat_format) + '\n')
+        if i == number_of_samples - 1:
+            file.write(json.dumps(chat_format)) # can't have a new line at the end in output file for fine-tuning
+        else:
+            file.write(json.dumps(chat_format) + '\n')
