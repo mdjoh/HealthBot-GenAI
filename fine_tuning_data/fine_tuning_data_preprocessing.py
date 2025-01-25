@@ -1,4 +1,4 @@
-# Make supplementary dataset for GPT model fine-tuning
+# Script to make supplementary dataset for GPT model fine-tuning
 # Convert csv dataset into JSONL format containing question-answer pairs for
 # assistant (disease) and user (symptoms) chat
 
@@ -8,7 +8,7 @@ import json
 import random
 
 # read in disease & symptom dataset
-data_df = pd.read_csv('./DiseaseAndSymptoms.csv', header=0)
+data_df = pd.read_csv('./fine_tuning_data/DiseaseAndSymptoms.csv', header=0)
 
 # convert disease & symptom data into string format
 data_df = data_df.astype(str)
@@ -82,7 +82,7 @@ number_of_samples = 20
 data_to_write = random.sample(training_data, number_of_samples)
 
 # write the symptoms-disease pairs to the JSONL output file in write mode
-with open('./chat_data_for_fine_tuning.jsonl', 'w') as file:
+with open('./fine_tuning_data/chat_data_for_fine_tuning.jsonl', 'w') as file:
 
     symptoms_col_num = 0
     disease_col_num = 1
@@ -91,7 +91,7 @@ with open('./chat_data_for_fine_tuning.jsonl', 'w') as file:
     # user-assistant chat to the output JSONL file
     for i in range(number_of_samples):
         chat_format = {"messages": [
-                    {"role": "developer", "content": "You are a medical professional. Try to give the most likely diagnosis based on given symptoms."},
+                    {"role": "system", "content": "You are a medical professional. Try to give the most likely diagnosis based on the symptoms entered by the user."},
                     {"role": "user", "content": "What could I have if I am experiencing " + data_to_write[i][symptoms_col_num] + "?"},
                     {"role": "assistant", "content": data_to_write[i][disease_col_num]}
                 ]}
