@@ -53,7 +53,7 @@ If you are pushing to public or shared repositories, add the `.env` file to `.gi
 
 The disease and symptoms dataset used for fine-tuning can be found [here](https://www.kaggle.com/datasets/choongqianzheng/disease-and-symptoms-dataset/data?select=DiseaseAndSymptoms.csv).
 
-Data used for OpenAI LLM fine-tuning was preprocessed to remove unwanted characters, make text lowercase, and concatenate symptoms into one string. The required format for training data is *JSONL*. See the fine-tuning training data [here](./fine_tuning_data/chat_data_for_fine_tuning.jsonl)
+Data used for OpenAI LLM fine-tuning was preprocessed to remove unwanted characters, make text lowercase, and concatenate symptoms into one string. The required format for training data is `.jsonl`. See the fine-tuning training data [here](./fine_tuning_data/chat_data_for_fine_tuning.jsonl).
 
 **NOTE:** To limit the training cost, the `gpt-4o-mini` LLM was used for fine-tuning.
 
