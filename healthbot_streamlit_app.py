@@ -3,7 +3,7 @@
 # ==================== GET FINE-TUNED MODEL TO DEPLOY IN APP =========================
 from fine_tuning_functions import createOpenAIClient, getFineTunedModelID
 
-# create OpenAI client
+# get fine-tuned model to use from OpenAI client
 client = createOpenAIClient()
 
 fine_tuned_model_id = getFineTunedModelID(client)
@@ -35,7 +35,7 @@ st.chat_message("assistant").write("What symptoms are you experiencing?")
 
 # set up prompt textbox for user to enter symptoms
 if user_symptoms := st.chat_input(placeholder="Enter your symptoms separated by a comma (e.g., fever, headaches, skin rash)"):
-    st.chat_message("user").write(user_symptoms) # transfer prompt (which has the list of symptoms) to LLM
+    st.chat_message("user").write("What could I have if I am experiencing " + user_symptoms + "?") # transfer prompt (which has the list of symptoms) to LLM
 
     if not openai_api_key:
         st.info("Please add your OpenAI API key to continue.")
