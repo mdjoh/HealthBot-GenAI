@@ -61,7 +61,7 @@ Data used for OpenAI LLM fine-tuning was preprocessed to remove unwanted charact
 - Trained tokens: **693,960**
 - Epochs: **2**
 - Batch size: **6**
-- Cost: **$2.08 CAD**
+- Cost: **$2.08 USD**
 - Time required: **00:30:59**
 
 #### Limitations
