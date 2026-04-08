@@ -1,2 +1,2 @@
 openai
-./src/fine_tuning_data/fine_tuning_functions.py
+src/fine_tuning_data/fine_tuning_functions.py
