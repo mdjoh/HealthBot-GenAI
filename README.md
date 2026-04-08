@@ -32,7 +32,7 @@ The HealthBot is deployed using [Streamlit](https://streamlit.io/). To run the a
 ```bash
 streamlit run healthbot_streamlit_app.py
 ```
-The app will run in a browser. You will need a valid OpenAI API key to use the application.
+The app will run in a browser. You will need a valid OpenAI API key and a fine-tuned model (available after running `run_fine_tuning_job.py`) to use the application.
 
 
 #### Requirements
