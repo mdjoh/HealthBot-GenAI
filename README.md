@@ -45,7 +45,7 @@ Once you have an OpenAI API key, create a `.env` file in any text editor to foll
 
 If you are pushing to public or shared repositories, add the `.env` file to `.gitignore` to avoid exposing your personal key.
 
-##### Python Modules
+##### Python Modules to Install
 - openai
 - streamlit >= 1.31.0
 
