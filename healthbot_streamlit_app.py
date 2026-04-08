@@ -1,7 +1,7 @@
 # Fine-tune GPT model and create HealthBot application UI using Streamlit
 
 # ==================== GET FINE-TUNED MODEL TO DEPLOY IN APP =========================
-from fine_tuning_functions import createOpenAIClient, getFineTunedModelID
+from fine_tuning.fine_tuning_functions import createOpenAIClient, getFineTunedModelID
 
 # get fine-tuned model to use from OpenAI client
 client = createOpenAIClient()

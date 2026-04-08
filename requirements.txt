@@ -1,2 +1,3 @@
 openai
-src/fine_tuning_data/fine_tuning_functions.py
+fine_tuning
+altair==4.0
